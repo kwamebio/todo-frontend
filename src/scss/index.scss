@@ -1,0 +1,70 @@
+@import "../../node_modules/bootstrap/scss/bootstrap";
+
+$primary-green: #5F8D4E;
+$primary-green-light: #A4BE7B;
+$tertiary: #E5D9B6;
+$white: #ffffff;
+
+body {
+  background-color: $primary-green-light;
+}
+
+.Auth {
+  height: 100vh;
+
+  &-card {
+    width: 100%;
+
+    @include media-breakpoint-up(sm) {
+      width: 500px;
+    }
+  }
+}
+
+.Todo {
+  img {
+    width: 400px;
+  }
+}
+
+.text {
+  &-green {
+    color: $primary-green;
+  }
+}
+
+.font {
+  &-size {
+    &-14 {
+      font-size: 14px;
+    }
+  }
+}
+
+.btn {
+  &-green {
+    background-color: $primary-green;
+    color: $white;
+
+    &:hover {
+      background-color: $primary-green;
+      color: $white;
+      opacity: 0.9;
+    }
+  }
+}
+
+.bg {
+  &-tertiary {
+    background-color: $tertiary;
+  }
+}
+
+form {
+  .form-control {
+    &:focus {
+      box-shadow: none;
+      border-color: $primary-green;
+    }
+  }
+}

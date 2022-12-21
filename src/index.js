@@ -1,13 +1,24 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
+import './scss/index.scss';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import 'bootstrap/dist/js/bootstrap.min';
+import {SnackbarProvider} from "notistack";
+import CloseSnackBar from "./components/CloseSnackbar";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <SnackbarProvider
+      autoHideDuration={8000}
+      maxSnack={1}
+      anchorOrigin={{ horizontal: 'right', vertical: 'top' }}
+      disableWindowBlurListener={true}
+      action={<CloseSnackBar />}
+    >
+      <App />
+    </SnackbarProvider>
   </React.StrictMode>
 );
 
