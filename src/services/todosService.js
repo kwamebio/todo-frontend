@@ -1,12 +1,12 @@
 import http from "axios";
-import {getMessage} from "../config/handleApiError";
+import { getMessage } from "../config/handleApiError";
 
 const httpInstance = http.create();
-httpInstance.defaults.baseURL = process.env.REACT_APP_API_BASE_URL;
+httpInstance.defaults.baseURL = "http://localhost:3001/api";
 httpInstance.interceptors.request.use(async (config) => {
   const user = JSON.parse(localStorage.getItem('user'));
 
-  config.headers = {...config.headers, authorization: `Bearer ${user.token}`};
+  config.headers = { ...config.headers, authorization: `Bearer ${user.token}` };
 
   return config;
 });
